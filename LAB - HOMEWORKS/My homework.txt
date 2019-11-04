@@ -1,0 +1,51 @@
+int redLed = 3;
+int greenLed = 5;
+int blueLed = 6; 
+
+int potPin_red = A0; 
+int potPin_green = A1;
+int potPin_blue = A2;
+
+
+void setup(){
+  /*pinMode(potPin_red,OUTPUT);
+  pinMode(potPin_green,OUTPUT);
+  pinMode(potPin_blue,OUTPUT);
+  
+  pinMode(potPin_red,INPUT); 
+  pinMode(potPin_green,INPUT); 
+  pinMode(potPin_blue,INPUT);*/
+
+  pinMode(redLed, OUTPUT);
+  pinMode(greenLed, OUTPUT);
+  pinMode(blueLed, OUTPUT);
+
+  Serial.begin(9600);
+ 
+}
+
+void loop() {
+  Serial.println(analogRead(potPin_red));
+  Serial.println(analogRead(potPin_green));
+  Serial.println(analogRead(potPin_blue));
+  //write and read for ANODE
+//  analogWrite(redPin,255-(255./1023.)*analogRead(potPin_red));
+//  analogWrite(greenPin,255-(255./1023.)*analogRead(potPin_green));
+//  analogWrite(bluePin,255-(255./1023.)*analogRead(potPin_blue));
+
+  //analogWrite(the pin in which the value will be put, the value itself)
+
+
+  analogWrite(redLed, analogRead(potPin_red));
+  analogWrite(greenLed, analogRead(potPin_green));
+  analogWrite(blueLed,analogRead(potPin_blue));
+
+
+  //write and read for CATHODE
+//  analogWrite(potPin_red,(255./1023.)*analogRead(potPin_red));
+//  analogWrite(potPin_green,(255./1023.)*analogRead(potPin_green));
+//  analogWrite(potPin_blue,(255./1023.)*analogRead(potPin_blue));
+
+  delay(10);
+  
+}
