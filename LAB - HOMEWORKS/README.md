@@ -1,5 +1,5 @@
 Lab homeworks
-LAB 4 - Homework:
+LAB 5 - Homework:
 
 // digital pin connected to switch output
 const int pinSW = 0; 
